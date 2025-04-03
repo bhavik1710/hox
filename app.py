@@ -12,7 +12,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model=genai.GenerativeModel("gemini-1.5-pro")
 
 def my_output(query):
-    response=model.generate_content(query)
+    response=model.generate_content(query,timeout=60)
     return response.text
 
 st.set_page_config(page_title="SOLUTION_WITH_BHAVIK")
